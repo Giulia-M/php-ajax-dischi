@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +14,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div id="app">
+
+        <select name="" id="" v-model="input">
+            <option value="">All</option>
+            <option v-for="disco in listaDischi" :value="disco.genre">
+                {{disco.genre}}
+            </option>
+
+        </select>
+
+
         <div class="discs_wrapper">
             <div class="discs" v-for="disco in listaDischi">
                 <img :src="disco.poster" alt="card">
@@ -28,4 +40,5 @@
 
     <script src="script/main.js"></script>
 </body>
+
 </html>
