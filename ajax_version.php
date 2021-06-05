@@ -17,8 +17,8 @@
 
 <body>
     <div id="app">
-
-        <select name="genre" id="genre" v-model="input" @change="fetchData()" >
+    <h2 class="title">Seleziona album:</h2>
+        <select name="genre" id="genre" v-model="input" @change="fetchData()" class="wrapper_select" >
             <option value="">All</option>
             <option v-for="genre in filteredForGenre" :value="genre">
                 {{genre}}

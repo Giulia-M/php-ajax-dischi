@@ -8,6 +8,7 @@ $spacing: 20px;
 .discs_wrapper {
     display: flex;
     flex-wrap: wrap;
+    margin-top: $spacing * 2;
     .discs {
         flex-basis: 300px;
         display: flex;
@@ -21,5 +22,13 @@ $spacing: 20px;
             height: 200px;
         }
     }
+}
+select {
+    border-radius: 5px;
+    padding: $spacing / 2;
+    display: inline-block;
+}
+.title {
+    display: inline-block;
 }
 
