@@ -18,10 +18,10 @@
 <body>
     <div id="app">
 
-        <select name="" id="" v-model="input">
+        <select name="genre" id="genre" v-model="input" @change="fetchData()" >
             <option value="">All</option>
-            <option v-for="disco in listaDischi" :value="disco.genre">
-                {{disco.genre}}
+            <option v-for="genre in filteredForGenre" :value="genre">
+                {{genre}}
             </option>
 
         </select>

@@ -3,6 +3,8 @@ const app = new Vue ({
     data: {
         listaDischi: {},
         input: "",
+
+        filteredForGenre: [],
     },
 
     methods: {
@@ -15,7 +17,20 @@ const app = new Vue ({
             .then(resp => {
                 this.listaDischi = resp.data;
 
+
+                for (let i = 0; i < this.listaDischi.length; i++) {
+                    const element = this.listaDischi[i];
+
+                    let currentGenre = element["genre"];
+                    if( !this.filteredForGenre.includes(currentGenre)) {
+                        this.filteredForGenre.push(currentGenre)
+                    }
+                    
+                }
+
             })
+
+
 
             .catch(er => {
                 console.log(er);
@@ -23,11 +38,12 @@ const app = new Vue ({
             })
         },
 
+        
+
             
     },
     
    
-
     //all'avvio della pagina mi fa la chiamata subito
     mounted() {
         this.fetchData();
